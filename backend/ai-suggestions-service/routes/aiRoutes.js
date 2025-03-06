@@ -12,7 +12,12 @@ router.post("/ai-suggestion", async (req, res) => {
         const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
 
         const response = await model.generateContent({
-            contents: [{ role: "user", parts: [{ text: documentText }] }]
+            contents: [{
+                role: "user",
+                parts: [{
+                    text: `Improve the following text by correcting grammar and spelling mistakes:\n\n${documentText}`
+                }]
+            }]
         });
         
         const suggestion = await response.response.text();
