@@ -15,13 +15,13 @@ const CollaborationPage = () => {
     const [documentContent, setDocumentContent] = useState(""); 
 
     const handleAISuggestion = async () => {
-      setLoading(true);
+      setLoading(true);  //set loading indicator
       try {
           const response = await axios.post("http://localhost:7000/api/ai-suggestion", {
               documentText:documentContent,
           });
-          setSuggestion(response.data.suggestion);
-          setShowModal(true);
+          setSuggestion(response.data.suggestion);  // Store AI suggestion
+          setShowModal(true); // Show suggestion modal
       } catch (error) {
           console.error("Error getting AI suggestion:", error);
       } finally {

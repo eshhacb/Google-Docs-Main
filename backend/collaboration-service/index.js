@@ -81,6 +81,8 @@ io.on("connection", (socket) => {
   });
 
 
+
+  //undo will use OT so not implemented yet 
 socket.on("undo", async ({ documentId }) => {
   let document = await Document.findById(documentId);
   if (!document || document.history.length === 0) return;

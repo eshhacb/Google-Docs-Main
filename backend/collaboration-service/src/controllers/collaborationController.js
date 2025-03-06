@@ -26,7 +26,7 @@ export const saveDocument = async (req, res) => {
 
   document.content = content;
   document.lastUpdated = new Date();
-  await document.save();
+  await document.save(); //saves in the mongodb db
 
   res.json({ message: "Document saved successfully" });
 };
