@@ -50,7 +50,7 @@ const applySuggestion = () => {
                 >
                     {loading ? "Generating..." : "Get AI Suggestion"}
                 </button>
-        <Editor documentId={documentId} externalContent={documentContent} onContentChange={applySuggestion}/>
+        <Editor documentId={documentId} externalContent={documentContent} onContentChange={setDocumentContent}/>
         {showModal && (
                     <AISuggestionModal 
                         suggestion={suggestion} 

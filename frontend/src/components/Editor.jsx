@@ -61,7 +61,7 @@ const Editor = ({ documentId, onContentChange, externalContent  }) => {
   useEffect(() => {
     if (externalContent !== undefined && externalContent !== content) {
       setContent(externalContent);
-      onContentChange(externalContent);
+      // onContentChange(externalContent);
     }
   }, [externalContent])
 
