@@ -52,7 +52,7 @@ io.on("connection", (socket) => {
 
 
   socket.on("edit-document", async ({ documentId, content }) => {
-    console.log("Received content update:", content);
+    console.log("BAckend Received content update:", content);
   
     try {
       // Fetch the document from the database
